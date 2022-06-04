@@ -1,0 +1,65 @@
+.wrapper {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 22px;
+    margin-left: 16px;
+    padding: 0px 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    min-width: 100px;
+    min-height: 36px;
+    user-select: none;
+}
+.cssSmall {
+    min-width: 88px;
+    min-height: 28px;
+}
+.cssMedium {
+    min-width: 100px;
+    min-height: 36px;
+}
+.cssLarge {
+    width: 100%;
+    min-width: 168px;
+    min-height: 48px;
+}
+.cssUpload {
+    border-radius: 2px;
+    color: #161823;
+    border-color: rgba(22, 24, 35, 0.12);
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+    svg {
+        margin-right: 8px;
+    }
+}
+.cssLogin {
+    color: rgba(255, 255, 255, 1) !important;
+    background-color: var(--primary-color);
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+    }
+}
+.cssFollow {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+.cssDownLoadApp {
+    color: rgba(22, 24, 35, 0.75) !important;
+    border-color: rgba(22, 24, 35, 0.12);
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    border-radius: 52px;
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}

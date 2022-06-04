@@ -8,7 +8,9 @@ const cx = classNames.bind(styles)
 function AccountItem() {
     return (
         <div className={cx('Wrapper')}>
-            <img className={cx('avatar')} src='https://p9-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/9a8a5e7e3a49056a08e8f9adccfe8961~c5_300x300.webp?x-expires=1653814800&x-signature=NK0BLPOW97iN2OMUvsKlReDbKiY%3D' alt='avatar' />
+            <img className={cx('avatar')} src='
+            https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1654513200&x-signature=jO4LglHYCrknv2vloDqihxhF2uI%3D
+            ' alt='avatar' />
             <div className={cx('info')}>
                 <h4>doanhb <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} /></h4>
                 Hoàng Bá Đoàn
