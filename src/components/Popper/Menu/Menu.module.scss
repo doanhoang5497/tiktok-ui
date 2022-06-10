@@ -1,6 +1,7 @@
 .item-menu {
     user-select: none;
     padding: 10px 16px;
+    cursor: pointer;
     &:hover {
         background: rgba(22, 24, 35, 0.03);
     }
@@ -20,10 +21,15 @@
     margin: 0;
 }
 .header {
+    margin-top: -8px;
+    height: 50px;
     display: flex;
     position: relative;
     align-items: center;
     user-select: none;
+    .btn-back {
+        background: none;
+    }
     svg {
         width: 48px;
         &:hover {
@@ -35,4 +41,8 @@
         transform: translateX(50%);
         right: 50%;
     }
+}
+.sparate {
+    padding: 10px 16px;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
 }

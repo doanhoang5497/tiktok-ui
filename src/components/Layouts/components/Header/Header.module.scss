@@ -87,9 +87,27 @@
     align-items: center;
     justify-content: space-around;
     top: 0;
+    .btn-login {
+        background: none;
+        color: rgba(22, 24, 35, 0.897);
+        font-size: 2.2rem;
+        margin-left: 16px;
+        padding: 3px 3px 0px;
+    }
     .btn-support {
         padding: 0px 4px;
         margin-left: 16px;
+        cursor: pointer;
+    }
+    .user-avatar {
+        margin-right: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: 24px;
+    }
+    img {
         cursor: pointer;
     }
 }
