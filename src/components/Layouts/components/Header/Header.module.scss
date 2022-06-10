@@ -87,8 +87,9 @@
     align-items: center;
     justify-content: space-around;
     top: 0;
-    div {
-        padding: 6px 8px;
-        margin: 0px 8px;
+    .btn-support {
+        padding: 0px 4px;
+        margin-left: 16px;
+        cursor: pointer;
     }
 }

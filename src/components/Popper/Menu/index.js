@@ -1,11 +1,10 @@
 import Tippy from '@tippyjs/react/headless';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLanguage, faCircleQuestion, faKeyboard } from '@fortawesome/free-solid-svg-icons'
 import { Wrapper as PopperWrapper } from '../../Popper'
 
 import classNames from 'classnames/bind'
 import styles from "./Menu.module.scss";
 import MenuItem from './MenuItem';
+import Header from './Header';
 
 
 const cx = classNames.bind(styles)
@@ -20,13 +19,16 @@ function Menu({ children, items = [] }) {
             visible
             placement='bottom-end'
             render={attrs => (
-                <PopperWrapper>
-                    {
-                        items.map((item, index) => {
-                            return <MenuItem key={index} data={{ item }} />
-                        })
-                    }
-                </PopperWrapper>
+                <div className={cx('wrapper')}>
+                    <PopperWrapper>
+                        <Header title="Ngôn ngữ" />
+                        {
+                            items.map((item, index) => {
+                                return <MenuItem key={index} data={{ item }} />
+                            })
+                        }
+                    </PopperWrapper>
+                </div>
             )}
         >
             {children}
