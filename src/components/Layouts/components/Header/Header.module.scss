@@ -40,23 +40,17 @@
         transform: translateY(-50%);
         margin: 0px 12px;
     }
-    // .btn-clear {
-    //     display: none;
-    // }
-    // .i-loading {
-    //     display: none;
-    // }
     padding: 0px 0px 0px 16px;
     background: rgba(22, 24, 35, 0.06);
     border-radius: 92px;
     font-size: 1.6rem;
     height: 46px;
     position: relative;
+    display: flex;
     span {
         border-left: 1px solid rgba(22, 24, 35, 0.12);
         height: 28px;
-        top: 9px;
-        position: absolute;
+        margin-top: 9px;
     }
     input {
         height: 100%;
@@ -101,13 +95,17 @@
     }
     .user-avatar {
         margin-right: 12px;
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         object-fit: cover;
         margin-left: 24px;
     }
     img {
         cursor: pointer;
+    }
+    span {
+        display: flex;
+        align-items: center;
     }
 }
