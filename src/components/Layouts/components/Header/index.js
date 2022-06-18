@@ -180,12 +180,13 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="
                                 https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/c92d8e546864f6c7fefea75b271c9baa.jpeg?x-expires=1655712000&x-signature=WlFitLf9FUsq30mqfhZOTh2IhaI%3D
                                 "
                                 className={cx('user-avatar')}
                                 alt="Hoàng Bá Đoàn"
+                            // fallback='https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png'
                             />
                         ) : (
                             <div className={cx("btn-support")}>
