@@ -1,17 +1,11 @@
-import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import TippyContent from '@tippyjs/react';
-import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
-
 
 import classNames from 'classnames/bind'
 import styles from "./Header.module.scss";
-import { Wrapper as PopperWrapper } from '../../../Popper'
-import { AccountItem } from '../../../AccountItem';
-import { Button } from '../../../Button';
-import Menu from '../../../Popper/Menu';
+
+import { Button } from '../../../components/Button';
+import Menu from '../../../components/Popper/Menu';
 import { Link } from 'react-router-dom';
 import {
     InboxIcon,
@@ -23,13 +17,12 @@ import {
     CoinIcon,
     SettingIcon,
     SignOutIcon,
-    ClearIcon,
-    SearchIcon,
     PlusIcon,
     MenuIcon
-} from '../../../Icons';
-import Image from '../../../Image';
-
+} from '../../../components/Icons';
+import Image from '../../../components/Image';
+import Search from '../Search';
+import config from '../../../config'
 const cx = classNames.bind(styles)
 
 function Header() {
@@ -49,7 +42,7 @@ function Header() {
                         type: 'language',
                         code: 'en',
                         title: 'English'
-                    }
+                    },
                 ]
             }
         },
@@ -64,12 +57,7 @@ function Header() {
         },
     ]
 
-    const [searchResult, setSearchResult] = useState([]);
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult(["Pi", "Ka", "Chu",])
-        }, 1000);
-    }, [])
+
 
     const handleMenuChange = (menuItem) => {
     }
@@ -101,7 +89,7 @@ function Header() {
     return (
         <header className={cx("wrapper")}>
             <div className={cx("content")}>
-                <Link to="/">
+                <Link to={config.routes.home}>
                     <div className={cx("logo")} >
                         <svg height="42" width="118" alt="TikTok">
                             <path d="M9.87537 16.842V15.7233C9.49211 15.6721 9.10246 15.6401 8.70003 15.6401C3.90288 15.6338 0 19.5399 0 24.3475C0 27.2947 1.46917 29.9031 3.71764 31.4822C2.26763 29.9287 1.37974 27.8381 1.37974 25.5494C1.37974 20.8121 5.17403 16.9507 9.87537 16.842Z" fill="#25F4EE"></path>
@@ -123,36 +111,8 @@ function Header() {
                         </svg>
                     </div>
                 </Link>
-                <div>
-                    <Tippy
-                        interactive={true}
-                        render={attrs => (
-                            <div className={cx("search-result")} tabIndex="-1" {...attrs}>
-                                <PopperWrapper>
-                                    <h4 className={cx("search-title")}>Tài khoản</h4>
-                                    {searchResult.map((item, index) =>
-                                        <AccountItem key={index} className={cx('search-result-item')} item={item} />
-                                    )}
-                                    <h4 className={cx('readmore')}>Xem tất cả kết quả danh cho...</h4>
-                                </PopperWrapper>
-                            </div>
-                        )}
-                    >
-                        <div className={cx("search")}>
-                            <input placeholder="Tìm kiếm tài khoản và video" spellCheck={false}></input>
-                            <button className={cx("btn-clear")}>
-                                <ClearIcon />
-                            </button>
-                            <FontAwesomeIcon className={cx("i-loading")} icon={faSpinner} />
-                            <span></span>
-                            <button className={cx("btn-search")}>
-                                <SearchIcon />
-                            </button>
-                        </div>
-                    </Tippy>
-                </div>
 
-
+                <Search />
                 <div className={cx("login")}>
                     <Button cssUpload to="/upload">
                         <PlusIcon />

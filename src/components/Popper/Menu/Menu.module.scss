@@ -21,6 +21,7 @@
     margin: 0;
 }
 .header {
+    flex-shrink: 0;
     margin-top: -8px;
     height: 50px;
     display: flex;
@@ -45,4 +46,7 @@
 .sparate {
     padding: 10px 16px;
     border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
+.menu-body {
+    overflow-y: auto;
 }

@@ -12,7 +12,7 @@ const cx = classNames.bind(styles)
 
 const defaultFn = () => { }
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
 
     const [history, setHistory] = useState([{ data: items }])
     const currentMenu = history[history.length - 1]
@@ -21,7 +21,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             delay={[0, 500]}
             interactive={true}
             offset={[12, 8]}
-            // visible
+            hideOnClick={hideOnClick}
             placement='bottom-end'
             render={attrs => (
                 <div className={cx('wrapper')}>
@@ -35,22 +35,24 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                                 }}
                             />
                         }
+                        <div className={cx('menu-body')}>
 
-                        {
-                            currentMenu.data.map((item, index) => {
-                                const isParent = !!item.children
-                                return <MenuItem
-                                    key={index}
-                                    data={{ item }}
-                                    onClick={() => {
-                                        if (isParent) {
-                                            setHistory(prev => [...prev, item.children])
-                                        } else {
-                                            onChange(item)
-                                        }
-                                    }} />
-                            })
-                        }
+                            {
+                                currentMenu.data.map((item, index) => {
+                                    const isParent = !!item.children
+                                    return <MenuItem
+                                        key={index}
+                                        data={{ item }}
+                                        onClick={() => {
+                                            if (isParent) {
+                                                setHistory(prev => [...prev, item.children])
+                                            } else {
+                                                onChange(item)
+                                            }
+                                        }} />
+                                })
+                            }
+                        </div>
                     </PopperWrapper>
                 </div>
             )

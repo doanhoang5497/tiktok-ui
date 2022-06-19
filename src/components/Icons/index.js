@@ -164,7 +164,7 @@ export const SearchIcon = ({ className, width = '2.4rem', height = '2.4rem' }) =
         width={width}
         height={height}
         viewBox="0 0 48 48"
-        fill="rgba(22, 24, 35, 0.75)"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
     ><path
         fillRule="evenodd"
