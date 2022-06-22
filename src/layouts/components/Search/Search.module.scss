@@ -56,6 +56,7 @@
         background: transparent;
         caret-color: rgba(254, 44, 85, 1);
         font-family: var(--font-family);
+        padding-right: 40px;
     }
     input:not(:placeholder-shown) ~ .btn-search {
         color: rgba(22, 24, 35, 0.75);
